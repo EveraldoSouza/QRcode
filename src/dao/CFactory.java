@@ -19,7 +19,7 @@ public class CFactory{
     
     public Connection getConnection(QRCodeConfigModel QRCodeConfig) { // Retorna uma nova conexão para uma instância
         
-        try {
+        try { //tratamento de error
              Class.forName(QRCodeConfig.getDbDriver());            // Registrar driver 
              return DriverManager.getConnection("jdbc:" + QRCodeConfig.getDbType() + "://" 
                      + QRCodeConfig.getSqlAddress() + "/" 
